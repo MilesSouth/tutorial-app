@@ -1,6 +1,7 @@
 import { FaEdit } from "react-icons/fa"
 import { AiFillDelete } from "react-icons/ai"
 import axios from "axios"
+import Modal from "./Modal"
 const TutorialList = ({ tutorials, getTutorial }) => {
   const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
 
@@ -53,6 +54,8 @@ const TutorialList = ({ tutorials, getTutorial }) => {
           })}
         </tbody>
       </table>
+
+      <Modal />
     </div>
   )
 }
