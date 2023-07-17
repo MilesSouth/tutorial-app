@@ -41,6 +41,8 @@ const TutorialList = ({ tutorials, getTutorial }) => {
                     size={20}
                     type="button"
                     className="me-2 text-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#open-modal"
                   />
                   <AiFillDelete
                     size={22}
