@@ -1,7 +1,19 @@
 import { FaEdit } from "react-icons/fa"
 import { AiFillDelete } from "react-icons/ai"
+import axios from "axios"
+const TutorialList = ({ tutorials, getTutorial }) => {
+  const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
 
-const TutorialList = ({ tutorials }) => {
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`${BASE_URL}${id}/`)
+    } catch (error) {
+      console.log(error)
+    }
+
+    getTutorial()
+  }
+
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -33,6 +45,7 @@ const TutorialList = ({ tutorials }) => {
                     size={22}
                     type="button"
                     className="text-danger "
+                    onClick={() => handleDelete(id)}
                   />
                 </td>
               </tr>
