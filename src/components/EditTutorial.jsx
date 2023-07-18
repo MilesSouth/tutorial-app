@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const EditTutorial = ({ editItem }) => {
+const EditTutorial = ({ editTutor, id }) => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
 
@@ -65,7 +65,17 @@ const EditTutorial = ({ editItem }) => {
                   />
                 </div>
                 <div className="text-end">
-                  <button type="submit" className="btn btn-success ms-auto">
+                  <button
+                    type="submit"
+                    className="btn btn-success ms-auto"
+                    onClick={() =>
+                      editTutor({
+                        id: id,
+                        title: title,
+                        description: description,
+                      })
+                    }
+                  >
                     Submit
                   </button>
                 </div>
